@@ -21,9 +21,9 @@ pub struct ServerConfig {
 impl AppConfig {
     pub fn load() -> Result<Self> {
         let ret = match (
-            File::open("metadata.yml"),
-            File::open("G:/Solutions/dnwtw/crm/crm-metadata/metadata.yaml"),
-            env::var("METADATA_CONFIG"),
+            File::open("send.yml"),
+            File::open("G:/Solutions/dnwtw/crm/crm-send/send.yaml"),
+            env::var("SEND_CONFIG"),
         ) {
             (Ok(reader), _, _) => serde_yaml::from_reader(reader),
             (_, Ok(reader), _) => serde_yaml::from_reader(reader),
